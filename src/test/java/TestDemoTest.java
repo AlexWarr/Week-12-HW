@@ -34,7 +34,7 @@ class TestDemoTest {
 	}
 	static Stream<Arguments> argumentsForAddPositive(){
 		Stream<Arguments> stream = Stream.of(
-		//arguments(2, 4, 6, false),
+		arguments(2, 4, 6, false),
 		arguments(-1, 2, 6, true),
 		arguments(2, 0, 6, true),
 		arguments(4, 6, 10, false)
