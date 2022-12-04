@@ -25,11 +25,14 @@ class TestDemoTest {
 
 	@ParameterizedTest
 	@MethodSource("TestDemoTest#argumentsForAddPositive")
-	void assertThatTwoPositiveNumbersAreAddedCorrectly(int a, int b, int expected, Boolean expectExeption) {
+	void assertThatTwoPositiveNumbersAreAddedCorrectly(
+			int a, int b, int expected, Boolean expectExeption) {
 		if(!expectExeption) {
-			assertThat(testDemo.addPositive(a, b)).isEqualTo(expected);
+			assertThat(testDemo.addPositive(a, b))
+			.isEqualTo(expected);
 		} else {
-			assertThatThrownBy(() -> testDemo.addPositive(a, b)).isInstanceOf(IllegalArgumentException.class);
+			assertThatThrownBy(() -> testDemo.addPositive(a, b))
+			.isInstanceOf(IllegalArgumentException.class);
 		}
 	}
 	static Stream<Arguments> argumentsForAddPositive(){
